@@ -1,0 +1,158 @@
+user:
+    field:
+        number:         char(20)
+        avatar:         char(20)
+        circlebg:       char(20)
+        nickname:       varchar(40)
+        gender:         enum('male','female')
+        birthday:       date
+        job:            varchar(40)
+        addtime:        timestamp
+        qqid:           char(32)
+        wxid:           char(32)
+        wbid:           char(10)
+        call_currency:  int(10)
+        call_time:      tinyint(4)
+        area:           varchar(100)
+        remark:         varchar(200)
+        is_enable:      tinyint(4) unsigned
+        is_agree:       tinyint(4) unsigned
+        deviceid:       char(32)
+        device_type:    enum('ios','android')
+        member_num:
+            type:           int(10) unsigned
+            auto_increment: true
+    index:
+        unq_number:     number
+        unq_qqid:       qqid
+        unq_wxid:       wxid
+        unq_wbid:       wbid
+user_device:
+    field:
+        user_id:   char(16)
+        type:      enum('android','ios')
+        deviceid:  char(32)
+        key:       char(32)
+        addtime:   timestamp
+        lastlogin: timestamp
+        login:     tinyint(4) unsigned
+    index:
+        idx_user_id:  user_id
+        unq_deviceid: deviceid
+user_login_record:
+    field:
+        user_id:     char(16)
+        real_ip:     char(20)
+        city:        char(20)
+        addtime:     timestamp
+    index:
+        idx_user_id:  user_id
+user_follow:
+    field:
+        user_id:    char(16)
+        mid:        char(16)
+        type:       char(10)
+        is_pay:     tinyint(4) unsigned
+        addtime:    timestamp
+        clear_time: timestamp
+    idx_user_id: user_id
+user_title:
+    field:
+        user_id:      char(16)
+        star_id:      char(16)
+        privilege_id: char(16)
+        name:         char(50)
+        start_time:   timestamp
+        end_time:     timestamp
+        addtime:      timestamp
+        is_end:       tinyint(4) unsigned
+    index:
+        idx_star_id: star_id
+        idx_user_id: user_id
+user_chat_bg:
+    field:
+        user_id:    char(16)
+        mid:        char(16)
+        bg_img:     char(20)
+        type:       enum('star','user')
+    index:
+        idx_user_id: user_id
+user_book:
+    field:
+        user_id:  char(16)
+        type:     char(15)
+        context:  text
+        img_list: text
+        user_tel: char(50)
+        addtime:  timestamp
+    index:
+        idx_user_id: user_id
+user_idol_raising:
+    field:
+        user_id:  char(16)
+        star_id:  char(16)
+        img_list: text
+        context:  text
+        addtime:  timestamp
+    index:
+        idx_user_id: user_id
+user_sweet_character:
+    field:
+        user_id:      char(16)
+        star_id:      char(16)
+        privilege_id: char(16)
+        name:         varchar(20)
+        type:         enum('sweet','character')
+        addtime:      timestamp
+        is_end:       tinyint(4) unsigned
+        start_time:   timestamp
+        end_time:     timestamp
+    index:
+        idx_user_id: user_id
+        idx_star_id: star_id
+user_call_log:
+    field:
+        user_id: char(16)
+        star_id: char(16)
+        addtime: timestamp
+    index:
+        idx_user_id: user_id
+        idx_star_id: star_id
+user_health_time:
+    field:
+        user_id:      char(16)
+        star_id:      char(16)
+        privilege_id: char(16)
+        addtime:      timestamp
+        type:         char(10)
+        is_enable:    tinyint(4) unsigned
+    index:
+        idx_user_id: user_id
+        idx_star_id: star_id
+user_call_time:
+    field:
+        user_id:      char(16)
+        from_user_id: char(16)
+        user_number:  char(20)
+        star_id:      char(16)
+        type:         enum('number','share')
+        addtime:      timestamp
+        is_used:      tinyint(4) unsigned
+    index:
+        idx_user_id: user_id
+user_address:
+    field:
+        user_id:    char(16)
+        city:       varchar(50)
+        detail:     varchar(200)
+        nickname:   varchar(100)
+        addtime:    timestamp
+        updatetime: timestamp
+        number:     char(20)
+    index:
+        idx_user_id: user_id
+
+
+
+
+

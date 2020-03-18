@@ -1,0 +1,35 @@
+admin:
+    field:
+        name:      char(20)
+        nickname:  char(20)
+        pwd:       char(40)
+        salt:      char(20)
+        admin:     tinyint(4) unsigned
+        group_id:  char(16)
+        is_enable: tinyint(4) unsigned
+        addtime:   timestamp
+    index:
+        unq_name:     name
+        idx_group_id: group_id
+    data:
+        -   id:        5afd26ef25000001
+            nickname:  超级管理员
+            name:      admin
+            pwd:       50ba7d62f895562e34e85bcd302a51f3e9371534
+            salt:      SDNYqCLEBZqe9dHeknLH
+            admin:     1
+            is_enable: 1
+admin_group:
+    field:
+        name:      char(20)
+        addtime:   timestamp
+    index:
+        unq_name: name
+admin_permission:
+    field:
+        type:      enum('user','group')
+        bid:       char(16)
+        name:      char(40)
+        addtime:   timestamp
+    index:
+        idx_bid: bid

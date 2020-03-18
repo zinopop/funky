@@ -1,0 +1,128 @@
+server:
+    mode:          0
+    name:          开发服
+    cluster:       0
+    keeper:        39.107.107.244
+    version:       1.3.3
+    log:           1
+    hostNameApp:   https://***/app/
+    hostNameAdmin: https://***/admin/
+ding: https://oapi.dingtalk.com/robot/send?access_token=*****
+flow:
+    host: 101.200.219.236
+db:
+    default:
+        host:     rm-2zez2jw98c673xlul.***.com
+        user:
+        password:
+        database:
+        min:      5
+        max:      50
+pagesize:
+    default: 20
+    min:     10
+    max:     100
+cache:
+    default:
+        host:
+        password:
+        database: 0
+        min:      5
+        max:      50
+    user:
+        host:
+        password:
+        database: 1
+        min:      5
+        max:      50
+event:
+    alarm_push:
+        - alarm::batchPush
+    cron_test:
+        - cron::test
+aliyun:
+    sms:
+        id:
+        secret:
+        sign:
+    push:
+        id:
+        secret:
+        key:
+            ios:
+            android:
+
+    asr:
+        id:
+        secret:
+    oss:
+        id:
+        secret:
+    mns:
+        key:
+        secret:
+        topic:
+        enabled: 1
+        host:
+qq:
+    android:
+    ios:
+wx:
+    appid:
+    secret:
+wb:
+    appkey:
+    appsecret:
+verify:
+    timeout:  1800
+    interval: 60
+    try:      3
+    tpl:
+        login: SMS_169130073
+upload:
+    path: /var/www/html
+    image:
+        width: 1440
+        size:  4
+    audio:
+        size: 20
+    video:
+        size: 50
+cdn:
+    0: http://39.105.25.41:8080
+session:
+    name:  sid
+    alive: 24
+app:
+    key:
+    shareUrl:
+admin:
+    pwd: ai@fifth
+    login:
+        try:      50
+        interval: 10
+pay:
+    ali:
+        0:
+            appId:
+            rsaPrivateKey:          +7vP6SIJk9r9+kKzC/Qfe/g0/Evt10bo0UmfocNrWM1HLtJGy8A2ZSY/CkwIfyjJxI5jtb95aZdfHm7NraL/3i0BzwJdDlYVswzkYxEkawucwALDENIxtwpetzfDRULYQ2ApQgFEvnH63vuLdwkf8IpSMIm0hBP2UGP8xINF+AdGRjwPXOfXUWKH/79oBIOkxeQXwTPCaCKpUJ80gNcXqAAxLQNEaKD+OzPoZA7d5rJOsXW8hDtO220IqSlFU03kJfTJoYb/dGJDOg/3jOWoSFrybuTeDCJfLcAn6FtYvKn7i7e9dro9/eM0WF7E8VSE8Jg3pz/g81HwIDAQABAoIBAQC/KTv/GhNHCmq73OExjFajU+w2Q5jmWuuU42ls89co9HqptsXm9nJ2deqZTCL63jVIv1WrgdoV2cvh851+pxYNN1kb41VYLs87w2pZ5fyPzsk+0pQncWpT/uD3oWNyrtWINNmM00VZ10Cg8F1/SJgViBn9RC97sKhfOTjxLerdj5xBtUTvzUI59V1ps6IT9qazjchzaipJe14/zq6zkp6qNwIcfoYlrj2If1yaX1a//7R2ToXGTnPpQSelj4j/sWysyOMV4Wkvcv47ttijl8Cuf4hU+yASGECoafH3UUW/O/58cetprjD8DQy3dmD7nN9K6cxglEM3zNUGTlOvKmypAoGBAPCVtgGPJWSc7ke46avx+nxyKeOsfK23jrprL/TRTJpt6J8xa7jrWKFkEFr4OK/WQuyy8sasjmE/lqYQ7XQOIQeTDqBDLlu/2C3s4jDAmbjycPiNgobnRoPvrBA+gW4CXtuqEOZX2MfNjO08C56aYb5KOAZN62fuDypJw2Y+Im/jAoGBANN2kJxIzR+iM2/dA69pzKB8I2hHZ43wk3LoPx89nsILfOAV2T/bgpT5gYzI1wW5OvGfZrXefKVtcwJLV18RUWZTp3R8Agg90Q89VbhqOla7uhP+otg9JXXCeXLaQWh3LQLfoOQtwSHHqE3a8cvma3Hz27gtOy/v4BblI2jN23KVAoGAHWpgp44mB0g8xh4wy+o5MzAOOR0k3WSdGePzKB7TG+qmT5iOUDzOSGVgro6895rd8ezrTCla+z74H3PgZJk5pqBvYF72cxdgyjS1bzqNURSrhWhf9jie4ZDTW+UYlCfMC1We3VsOUVerjHIUBZ9gphCTCwpJ5xovVn9QWdbtBPsCgYBwGxNfR1k3xA3w6ALkI/rPugArcG992GTTLj0ImupnhR+WzP531C/OOthrgq474o9VOWSCVolOSlAGj1qqk8vLq93C61tIcz06DxI6ylZTVQK5Ru2eJgyN+aPZN8wlTckXFOd/EKKq/eZEICbAKlAcAWQiqBgQueLbQG8dSMVmYQKBgELuwBxFZjdVDE01I6aQtDSeJiPGjvuEca5NomGXVBi8OTzNsaL7FpAPYmvMb+kNjVc/PBPRCaaxLhFr7ypk+gyROYdvpCjOqllmJ8pCNQ/iOh1LyFXcJtBeWTFQ5XrMdd4l4Fd262QcI3KZKWtB+48ce6Nn9i8HFp4tKqkrm4xV
+            rsaPrivateKeyPath:      /usr/local/fifth/service/cert/ali/rsa_private_key.pem
+            aliAppPayrsaPublicKey:  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxrrR7EO6d2+7vP6SIJk9r9+kKzC/Qfe/g0/Evt10bo0UmfocNrWM1HLtJGy8A2ZSY/CkwIfyjJxI5jtb95aZdfHm7NraL/3i0BzwJdDlYVswzkYxEkawucwALDENIxtwpetzfDRULYQ2ApQgFEvnH63vuLdwkf8IpSMIm0hBP2UGP8xINF+AdGRjwPXOfXUWKH/79oBIOkxeQXwTPCaCKpUJ80gNcXqAAxLQNEaKD+OzPoZA7d5rJOsXW8hDtO220IqSlFU03kJfTJoYb/dGJDOg/3jOWoSFrybuTeDCJfLcAn6FtYvKn7i7e9dro9/eM0WF7E8VSE8Jg3pz/g81HwIDAQAB
+            aliAppPayrsaPublicPath: /usr/local/fifth/service/cert/rsa_public_key.pem
+            aliPayrsaPublic:        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAltJ1y55QfHix2jRIYrmrDDcb0BusQdOqsQ2ubCRMWYUodDEriOGw/e7hZKks679ctlgXJJIJxzjcQGMZi7r45xQyVCLmVupJWsfc0XivjlJLgF71ooTOzAQK4w4q67kR19fQJZlrcor9k3F6WA4tNcWPPWCX9KUVmMnuMNO9pNe7paeNHELjhco02Tfx0pQiP384d2bK2qqae+e+s8p7JnLS0++qd66YGCWoaJ4wgQSScYE4Oc8KYM4HJtE2sulYLjlJalB6zg7/kHyNrkQ+/HaeHZjMOOGQtkrC33PW2sBbYu882dOR9mKLP/20rhfSBhmDKcp14qWXdziDJv53PQIDAQAB
+            gatewayUrl:             https://openapi.alipay.com/gateway.do
+            version:                1.0
+    wechat:
+        0:
+            appId:
+            mch_id:
+            key:
+            certPath: /usr/local/fifth/service/cert/wechat/apiclient_cert.pem
+            keyPath:  /usr/local/fifth/service/cert/wechat/apiclient_key.pem
+juhe:
+    weather:
+        url: http://op.juhe.cn/onebox/weather/query
+        key:
+    ipInfo:
+        url: http://apis.juhe.cn/ip/ipNew
+        key:
